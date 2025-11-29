@@ -1,6 +1,6 @@
 #/bin/bash
 
-git clone --branch rupod_classify_init https://adamczyha:${apikey_github}@github.com/adamczycha/fineweb2_bis.git 
+git clone --branch rupod_classify --single-branch --depth 1 https://adamczyha:${apikey_github}@github.com/adamczycha/fineweb2_bis.git 
 
 cd fineweb2_bis
 source ./classification_config
