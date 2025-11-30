@@ -8,9 +8,14 @@ set -a
 source ./classification_config
 set +a
 
+python -m pip install -r requirements.txt
+
+LOG_FILE="${PERSISTENT_STORAGE}/logs/worker_${POD_ID}.txt"
+mkdir -p "${PERSISTENT_STORAGE}/logs"
+exec > >(tee -a "$LOG_FILE") 2>&1
+
 cp -a $MODEL_CHECKPOINT .
 
-python -m pip install -r requirements.txt
 
 python classify.py
 if [ -n "$RUNPOD_POD_ID" ]; then 
