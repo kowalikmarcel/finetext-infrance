@@ -12,7 +12,7 @@ python -m pip install -r requirements.txt
 
 LOG_FILE="${PERSISTENT_STORAGE}/logs/worker_${POD_ID}.txt"
 mkdir -p "${PERSISTENT_STORAGE}/logs"
-exec > >(stdbuf -i0 -o0 -e0 tee -a "$LOG_FILE") 2>&1
+exec > >(tee -a "$LOG_FILE") 2>&1
 
 cp -a "${PERSISTENT_STORAGE}/${MODEL_CHECKPOINT}" .
 
