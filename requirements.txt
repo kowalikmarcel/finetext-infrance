@@ -1,0 +1,6 @@
+torch
+datasets
+python-dotenv
+transformers
+accelerate
+tqdm-loggable

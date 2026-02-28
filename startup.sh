@@ -1,9 +1,5 @@
 #/bin/bash
 
-git clone --branch runpod_classify --single-branch --depth 1 https://adamczyha:${apikey_github}@github.com/adamczycha/fineweb2_bis.git 
-
-cd fineweb2_bis
-
 set -a
 source ./classification_config
 set +a
